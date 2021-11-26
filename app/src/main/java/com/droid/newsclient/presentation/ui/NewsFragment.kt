@@ -1,4 +1,4 @@
-package com.droid.newsapiclient.presentation.ui
+package com.droid.newsclient.presentation.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
