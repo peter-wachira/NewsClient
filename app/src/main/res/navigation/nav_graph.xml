@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
-        android:name="com.droid.newsapiclient.presentation.ui.SavedFragment"
+        android:name="com.droid.newsclient.presentation.ui.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved">
         <action
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/infoFragment"
-        android:name="com.droid.newsapiclient.presentation.ui.InfoFragment"
+        android:name="com.droid.newsclient.presentation.ui.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info">
         <argument
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.droid.newsapiclient.presentation.ui.SearchNewsFragment"
+        android:name="com.droid.newsclient.presentation.ui.SearchNewsFragment"
         android:label="fragment_search_news"
         tools:layout="@layout/fragment_search_news" >
         <action
