@@ -8,12 +8,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
 
     defaultConfig {
         applicationId "com.droid.newsclient"
-        minSdk 21
-        targetSdk 31
+        minSdk 26
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         buildConfigField("String", "API_KEY", MY_KEY)

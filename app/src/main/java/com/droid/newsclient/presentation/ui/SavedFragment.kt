@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.droid.newsclient.R
+import com.droid.newsapiclient.R
 
 
 class SavedFragment : Fragment() {

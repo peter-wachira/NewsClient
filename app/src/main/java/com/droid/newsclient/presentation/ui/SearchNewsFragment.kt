@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.droid.newsclient.R
-import com.droid.newsclient.databinding.FragmentSearchNewsBinding
+import com.droid.newsapiclient.R
+import com.droid.newsapiclient.databinding.FragmentSearchNewsBinding
 
 class SearchNewsFragment : Fragment() {
 

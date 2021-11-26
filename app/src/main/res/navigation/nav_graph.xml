@@ -35,9 +35,6 @@
         android:name="com.droid.newsclient.presentation.ui.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info">
-        <argument
-            android:name="selected_article"
-            app:argType="com.droid.newsapiclient.data.model.Article" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"

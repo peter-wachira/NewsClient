@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.droid.newsclient.R
-import com.droid.newsclient.databinding.FragmentInfoBinding
+import com.droid.newsapiclient.R
+import com.droid.newsapiclient.databinding.FragmentInfoBinding
 
 
 class InfoFragment : Fragment() {
