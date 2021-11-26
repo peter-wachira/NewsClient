@@ -99,13 +99,6 @@ This app will make use of the following libraries:
 
 ## Extras
 
-### Known Bugs
-
-- There are currently no tests done for this project
-- As at the time this project was made, testing and UIs was not a major concern 
-- The project is currently not being maintained any more. Contributions are most welcome if you would like to add more modules to the project, you can reach me through my [Contacts](#Contacts) below.
-- Thanks for understanding.
-
 
 #### CI-Pipeline
 
