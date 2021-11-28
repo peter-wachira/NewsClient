@@ -4,7 +4,7 @@
 </a>
 </p>
 
-# NewsApp V2
+# NewsApp
 This is my simple app demonstration the use of clean architecture. It gets data from the [News API](https://newsapi.org/) and entertains the user using
 clean architecture and MVVM.
 
