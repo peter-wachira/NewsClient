@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_newsFragment_to_savedFragment"
             app:destination="@id/savedFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_techSourcesFragment"
+            app:destination="@id/techSourcesFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
@@ -45,4 +48,9 @@
             android:id="@+id/action_searchFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/techSourcesFragment"
+        android:name="com.droid.newsclient.presentation.ui.TechSourcesFragment"
+        android:label="fragment_tech_sources"
+        tools:layout="@layout/fragment_tech_sources" />
 </navigation>
