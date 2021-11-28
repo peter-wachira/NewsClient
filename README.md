@@ -14,7 +14,16 @@ minSdkVersion -> 26
 
 Gradle build system
 
+
+## Set up project
+
 Head over to the News api above and get your own API-KEY as well.
+
+To add the News API key, go to your gradle.properties file, then add this line: 
+
+```MY_KEY="b7122b5c5f8948eda9715867b6240ce6"```
+
+Run the project. :)
 
 
 ## TOC
