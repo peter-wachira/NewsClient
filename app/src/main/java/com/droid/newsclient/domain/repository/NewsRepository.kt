@@ -14,7 +14,7 @@ interface NewsRepository {
     suspend fun getSearchedNews(country: String,searchQuery:String, page: Int): Resource<APIResponse>
 
     // View all sources with a technology category
-    suspend fun getAllTechSourcesCategory(category:String,page:Int):Resource<SourcesApiResponse>
+    suspend fun getAllTechSourcesCategory(category: String, source: String, page: Int):Resource<SourcesApiResponse>
 
     //View Only Technology related Articles from a given source
     suspend fun getTechRelatedArticles(category:String,source: String,page:Int): Resource<APIResponse>
