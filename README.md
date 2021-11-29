@@ -32,10 +32,12 @@ Run the project. :)
 ## TOC
 
 - [Architecture](#architecture)
+- [APK](#apk)
 - [Flow](#flow)
 - [Libraries](#libraries)
 - [Extras](#extras)
 - [Contacts](#Contacts)
+
 
 ## Architecture
 
@@ -72,6 +74,10 @@ to observe data.
 The data layer uses the recommended **Repository Pattern** to make the network calls and store the data using
 **Room DB**.
 
+
+## APK
+
+Link to APK file [APK](https://drive.google.com/file/d/13s8Y3qZtsgUET6sStKSO9eXaKiJnpl-7/view?usp=sharing ) 
 
 ## Flow
 
