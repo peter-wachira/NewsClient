@@ -2,6 +2,7 @@ package com.droid.newsclient.data.model.sources
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Source(
     @SerializedName("category")
@@ -18,4 +19,4 @@ data class Source(
     val name: String,
     @SerializedName("url")
     val url: String
-)
+) : Serializable

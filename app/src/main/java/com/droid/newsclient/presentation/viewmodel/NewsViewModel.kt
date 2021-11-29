@@ -65,7 +65,7 @@ class NewsViewModel(
 
 
     //View all sources with a technology category
-    private val sourcesWithTech: MutableLiveData<Resource<SourcesApiResponse>> = MutableLiveData()
+    val sourcesWithTech: MutableLiveData<Resource<SourcesApiResponse>> = MutableLiveData()
     fun getSourcesWithTech(category: String, source: String, page: Int)= viewModelScope.launch{
         sourcesWithTech.postValue(Resource.Loading())
         try {

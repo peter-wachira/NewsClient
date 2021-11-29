@@ -49,6 +49,7 @@ class NewsFragment : Fragment() {
         viewArticleDetails()
         initRecyclerView()
         viewNewsList()
+
     }
 
     private fun viewArticleDetails() {

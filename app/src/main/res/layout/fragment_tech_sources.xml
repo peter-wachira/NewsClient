@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="See sources and their countries"
+        android:text="News sources and their countries"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/roboto"
         android:textColor="@color/colorPrimary"
@@ -44,19 +44,7 @@
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/textView5"
-        style="@style/TextAppearance.AppCompat.Body2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="You can now access tech related articles from a source"
-        android:textColor="@android:color/black"
-        android:padding="4dp"
-        app:fontFamily="@font/roboto"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView6"
@@ -69,8 +57,8 @@
         android:fontFamily="@font/roboto"
         android:padding="4dp"
         android:textColor="@color/colorTextBlackSecondary"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         android:text="Sources" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -126,8 +114,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/rv_sources"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rv_sources" />
+        app:layout_constraintTop_toTopOf="@+id/rv_sources"
+        app:layout_constraintVertical_bias="0.424" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
