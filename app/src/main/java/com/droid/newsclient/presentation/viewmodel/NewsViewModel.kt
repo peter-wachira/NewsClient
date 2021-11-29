@@ -1,5 +1,6 @@
 package com.droid.newsclient.presentation.viewmodel
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
@@ -99,6 +100,7 @@ class NewsViewModel(
     }
 
 
+    @SuppressLint("MissingPermission")
     private fun isNetworkAvailable(context: Context?): Boolean {
         if (context == null) return false
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
