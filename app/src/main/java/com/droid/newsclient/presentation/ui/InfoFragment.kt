@@ -26,12 +26,12 @@ class InfoFragment : Fragment() {
                               savedInstanceState: Bundle?) = binding.root
 
 
-    private fun getInfoFragmentArgs(){
+    private fun getInfoFragmentArgs() {
         val args: InfoFragmentArgs by navArgs()
-        val article= args.selectedArticle
+        val article = args.selectedArticle
         binding.webViewInfo.apply {
             webViewClient = WebViewClient()
-            if (article.url != null){
+            if (article.url != null) {
                 loadUrl(article.url)
             }
         }

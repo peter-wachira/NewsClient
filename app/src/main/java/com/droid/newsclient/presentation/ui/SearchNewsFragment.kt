@@ -52,10 +52,8 @@ class SearchNewsFragment : Fragment() {
     }
 
 
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?) =  fragmentSearchNewsBinding.root
+                              savedInstanceState: Bundle?) = fragmentSearchNewsBinding.root
 
 
     //    search implementation
@@ -183,7 +181,6 @@ class SearchNewsFragment : Fragment() {
             }
         })
     }
-
 
 
     /*

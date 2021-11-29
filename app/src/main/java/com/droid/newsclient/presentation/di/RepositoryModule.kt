@@ -18,6 +18,6 @@ class RepositoryModule {
     fun provideNewsRepository(
             newsRemoteDataSource: NewsRemoteDataSource
     ): NewsRepository {
-        return  NewsRepositoryImpl(newsRemoteDataSource)
+        return NewsRepositoryImpl(newsRemoteDataSource)
     }
 }

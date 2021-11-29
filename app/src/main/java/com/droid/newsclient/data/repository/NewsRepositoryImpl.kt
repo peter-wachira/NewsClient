@@ -27,7 +27,7 @@ class NewsRepositoryImpl(
     override suspend fun getTechRelatedArticles(category: String, source: String, page: Int): Resource<APIResponse> {
         return responseToResource(newsRemoteDataSource.getSearchedTopHeadlines(category, source, page))
     }
-    
+
 
     override suspend fun saveNews(article: Article) {
         TODO("Not yet implemented")

@@ -18,8 +18,8 @@ class FactoryModule {
     @Singleton
     @Provides
     fun provideNewsViewModelFactory(application: Application,
-                                    getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase, getSearchNewsUseCase: GetSearchNewsUseCase,getTechArticlesUseCase: GetTechArticlesUseCase,getTechSourcesUseCase: GetTechSourcesUseCase): NewsViewModelFactory {
-        return NewsViewModelFactory(application, getNewsHeadlinesUseCase,getSearchNewsUseCase,getTechArticlesUseCase,getTechSourcesUseCase)
+                                    getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase, getSearchNewsUseCase: GetSearchNewsUseCase, getTechArticlesUseCase: GetTechArticlesUseCase, getTechSourcesUseCase: GetTechSourcesUseCase): NewsViewModelFactory {
+        return NewsViewModelFactory(application, getNewsHeadlinesUseCase, getSearchNewsUseCase, getTechArticlesUseCase, getTechSourcesUseCase)
 
     }
 }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.droid.newsapiclient.R
@@ -27,7 +26,7 @@ class NewsFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
 
 
-    private val fragmentNewsBinding: NewsFragmentLayoutBinding by lazy{
+    private val fragmentNewsBinding: NewsFragmentLayoutBinding by lazy {
         NewsFragmentLayoutBinding.inflate(layoutInflater)
     }
     private var isScrolling = false
@@ -66,9 +65,8 @@ class NewsFragment : Fragment() {
 //    }
 
 
-
     private fun getTechArticlesFromSource(category: String) {
-        viewModel.getTechArticlesFromSource(category,country, page)
+        viewModel.getTechArticlesFromSource(category, country, page)
         viewModel.techArticlesFromSource.observe(viewLifecycleOwner, { response ->
             when (response) {
 

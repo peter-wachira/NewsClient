@@ -1,20 +1,16 @@
 package com.droid.newsclient.presentation.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AbsListView
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.droid.newsapiclient.R
 import com.droid.newsapiclient.databinding.FragmentTechSourcesBinding
-import com.droid.newsapiclient.databinding.NewsFragmentLayoutBinding
 import com.droid.newsclient.data.util.Resource
 import com.droid.newsclient.data.util.extensions.showErrorSnackbar
-import com.droid.newsclient.presentation.adapter.NewsAdapter
 import com.droid.newsclient.presentation.adapter.SourcesAdapter
 import com.droid.newsclient.presentation.viewmodel.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -25,13 +21,11 @@ class TechSourcesFragment : Fragment() {
     private var source = ""
     private var page = 1
     private var category = "technology"
-    private var country = "us"
     private lateinit var viewModel: NewsViewModel
     private lateinit var sourcesAdapter: SourcesAdapter
     private val fragmentNewsBinding: FragmentTechSourcesBinding by lazy {
         FragmentTechSourcesBinding.inflate(layoutInflater)
     }
-    private var isScrolling = false
     private var isLoading = false
     private var isLastPage = false
     private var pages = 0
@@ -62,7 +56,7 @@ class TechSourcesFragment : Fragment() {
 
 
     private fun initRecyclerView() {
-         sourcesAdapter = SourcesAdapter()
+        sourcesAdapter = SourcesAdapter()
         fragmentNewsBinding.rvSources.apply {
             adapter = sourcesAdapter
             layoutManager = LinearLayoutManager(activity)
@@ -92,7 +86,9 @@ class TechSourcesFragment : Fragment() {
                         isLastPage = page == pages
                     }
                 }
-                is Error -> {
+
+
+                else -> {
                     hideProgressBar()
                     response.message?.let {
 
@@ -104,61 +100,15 @@ class TechSourcesFragment : Fragment() {
                     }
 
                 }
-
-
-                is Resource.Loading -> {
-                    showProgressBar()
-                }
-
             }
         })
     }
 
 
-    private fun showProgressBar() {
-        isLoading = true
-        fragmentNewsBinding.progressBar.visibility = View.VISIBLE
-    }
-
     private fun hideProgressBar() {
         isLoading = false
         fragmentNewsBinding.progressBar.visibility = View.INVISIBLE
     }
-
-
-    /*
-        todo refactor boilerplate code
-        todo remove Manual Pager Adapter & replace with Pager library
-    */
-    private val onScrollListener = object : RecyclerView.OnScrollListener() {
-        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            super.onScrollStateChanged(recyclerView, newState)
-            if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
-                isScrolling = true
-            }
-
-        }
-
-        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-            super.onScrolled(recyclerView, dx, dy)
-            val layoutManager = fragmentNewsBinding.rvSources.layoutManager as LinearLayoutManager
-            val sizeOfTheCurrentList = layoutManager.itemCount
-            val visibleItems = layoutManager.childCount
-            val topPosition = layoutManager.findFirstVisibleItemPosition()
-
-            val hasReachedToEnd = topPosition + visibleItems >= sizeOfTheCurrentList
-            val shouldPaginate = !isLoading && !isLastPage && hasReachedToEnd && isScrolling
-            if (shouldPaginate) {
-                page++
-                viewModel.getAllArticles(country, page)
-                isScrolling = false
-
-            }
-
-
-        }
-    }
-
 
 
 }
