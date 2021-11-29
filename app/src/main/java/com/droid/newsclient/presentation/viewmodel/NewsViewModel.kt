@@ -19,6 +19,7 @@ import com.droid.newsclient.domain.usecase.GetTechSourcesUseCase
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
+
 class NewsViewModel(
         private val app: Application,
         private val getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase,
@@ -27,7 +28,7 @@ class NewsViewModel(
         private val getTechSourcesUseCase: GetTechSourcesUseCase
 ) : AndroidViewModel(app) {
 
-    private val newsHeadLines: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+     val newsHeadLines: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
 
     //View all articles
     fun getAllArticles(country: String, page: Int) = viewModelScope.launch(IO) {
@@ -80,7 +81,8 @@ class NewsViewModel(
     }
 
     //Search news implementation
-    private val searchedNews: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+    val searchedNews: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+
     fun searchNews(
             country: String,
             searchQuery: String,

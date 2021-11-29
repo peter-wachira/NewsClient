@@ -52,7 +52,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     }
 
-    private val differ = AsyncListDiffer(this, diffUtil)
+    val differ = AsyncListDiffer(this, diffUtil)
     override fun getItemCount(): Int {
         return differ.currentList.size
     }

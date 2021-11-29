@@ -17,14 +17,12 @@ interface NewsRepository {
     suspend fun getAllTechSourcesCategory(category: String, source: String, page: Int):Resource<SourcesApiResponse>
 
     //View Only Technology related Articles from a given source
-    suspend fun getTechRelatedArticles(category:String,source: String,page:Int): Resource<APIResponse>
+    suspend fun getTechRelatedArticles(category: String, source: String, page: Int): Resource<APIResponse>
 
     // Get items locally
     suspend fun saveNews(article: Article)
     suspend fun deleteNews(article: Article)
     fun getSavedNews(): Flow<List<Article>>
-
-
 
 
 
