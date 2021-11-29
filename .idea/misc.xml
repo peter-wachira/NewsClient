@@ -4,9 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/drawable/appbar_gradient.xml" value="0.16296296296296298" />
+        <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/drawable/background_item.xml" value="0.16" />
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.33958333333333335" />
+        <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/drawable/ic_logo.xml" value="0.18703703703703703" />
+        <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/drawable/splash_background.xml" value="0.17407407407407408" />
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/font/roboto.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/layout/activity_main.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/layout/activity_splash_screen.xml" value="0.346875" />
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/layout/fragment_info.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/layout/fragment_news.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/peter/StudioProjects/NewsClient/app/src/main/res/layout/fragment_saved.xml" value="0.20208333333333334" />

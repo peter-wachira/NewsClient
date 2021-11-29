@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.droid.newsapiclient.R
@@ -45,11 +46,68 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         newsAdapter = (activity as MainActivity).newsAdapter
-
-        viewArticleDetails()
         initRecyclerView()
-        viewNewsList()
+        getAllArticlesList()
+        viewArticleDetails()
+    }
 
+    //Check if there are any arguments passed from TechSourcesFragment
+//    private fun getNewsFragmentArgs() {
+//
+//        val args: NewsFragmentArgs by navArgs()
+//        val source = args.selectedSource
+//        if (source.id!= null){
+//            getTechArticlesFromSource(source.id,)
+//        }
+//        else{
+//            // If no arguments are passed show default list of all articles
+//            getAllArticlesList()
+//        }
+//    }
+
+
+
+    private fun getTechArticlesFromSource(category: String) {
+        viewModel.getTechArticlesFromSource(category,country, page)
+        viewModel.techArticlesFromSource.observe(viewLifecycleOwner, { response ->
+            when (response) {
+
+                is Resource.Success -> {
+                    Timber.e("response:  ${response.data}")
+
+                    hideProgressBar()
+                    response.data?.let {
+                        newsAdapter.differ.submitList(it.articles.toList())
+                        when {
+                            it.totalResults % 20 == 0 -> {
+                                pages = it.totalResults / 20
+                            }
+                            else -> {
+                                pages = it.totalResults / 20 + 1
+                            }
+                        }
+                        isLastPage = page == pages
+                    }
+                }
+                is Error -> {
+                    hideProgressBar()
+                    response.message?.let {
+
+                        fragmentNewsBinding.root.showErrorSnackbar(
+                                "An error occurred : $it",
+                                Snackbar.LENGTH_LONG
+                        )
+
+                    }
+
+                }
+
+                is Resource.Loading -> {
+                    showProgressBar()
+                }
+
+            }
+        })
     }
 
     private fun viewArticleDetails() {
@@ -78,7 +136,7 @@ class NewsFragment : Fragment() {
     }
 
 
-    private fun viewNewsList() {
+    private fun getAllArticlesList() {
         viewModel.getAllArticles(country, page)
         viewModel.newsHeadLines.observe(viewLifecycleOwner, { response ->
             when (response) {
