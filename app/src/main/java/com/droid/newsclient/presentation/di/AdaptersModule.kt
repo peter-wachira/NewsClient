@@ -13,13 +13,13 @@ import javax.inject.Singleton
 class AdaptersModule {
     @Singleton
     @Provides
-    fun provideNewsAdapterModule(): NewsAdapter{
-        return   NewsAdapter()
+    fun provideNewsAdapterModule(): NewsAdapter {
+        return NewsAdapter()
     }
 
     @Singleton
     @Provides
-    fun provideSourcesAdapterModule():SourcesAdapter{
+    fun provideSourcesAdapterModule(): SourcesAdapter {
         return SourcesAdapter()
     }
 }

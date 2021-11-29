@@ -28,6 +28,23 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        applicationVariants.all{
+                // this method is use to rename your all apk weather
+                // it may be signed or unsigned(debug apk)
+            variant ->
+                variant.outputs.each{
+                        // on below line we are setting
+                        // a name to our apk as GFG.apk
+                    output->
+                        // on below line we are adding version name to
+                        // our .apk file along with the app name
+                        def name = "PixelNews.apk"
+                        // on below line we are setting the
+                        // outputFile Name to our apk file
+                        output.outputFileName = name
+                }
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,6 +60,7 @@ android {
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.paging:paging-common-ktx:3.0.1'
     def lifecycle_version = '2.3.1'
     def nav_version = '2.3.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

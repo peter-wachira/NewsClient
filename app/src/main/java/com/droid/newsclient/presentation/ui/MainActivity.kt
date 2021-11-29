@@ -20,8 +20,10 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: NewsViewModelFactory
+
     @Inject
     lateinit var newsAdapter: NewsAdapter
+
     @Inject
     lateinit var sourcesAdapter: SourcesAdapter
     lateinit var viewModel: NewsViewModel
@@ -34,10 +36,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
-        navController =navHostFragment.navController
+        navController = navHostFragment.navController
         binding.bottomNaviagtion.setupWithNavController(navController)
 
-        viewModel = ViewModelProvider(this,factory)
+        viewModel = ViewModelProvider(this, factory)
                 .get(NewsViewModel::class.java)
 
     }

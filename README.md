@@ -1,12 +1,15 @@
-<p align="center">
-<a href="https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=peter-wachira/TMDBClient&amp;utm_campaign=Badge_Grade">
-<img src="https://api.codacy.com/project/badge/Grade/1624b5e6304b4104a39e9ad7780404e5"/>
-</a>
-</p>
+# Pixel News
+#### November 29th 2021
+#### By **Peter Wachira**
+
 
 # NewsApp V2
 This is my simple app demonstration the use of clean architecture. It gets data from the [News API](https://newsapi.org/) and entertains the user using
 clean architecture and MVVM.
+
+
+![](screenshots/img.png)
+
 
 ## Prerequisite
 

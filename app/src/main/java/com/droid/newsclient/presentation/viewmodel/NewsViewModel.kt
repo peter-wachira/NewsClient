@@ -19,6 +19,7 @@ import com.droid.newsclient.domain.usecase.GetTechSourcesUseCase
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
+
 class NewsViewModel(
         private val app: Application,
         private val getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase,
@@ -27,7 +28,7 @@ class NewsViewModel(
         private val getTechSourcesUseCase: GetTechSourcesUseCase
 ) : AndroidViewModel(app) {
 
-    private val newsHeadLines: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+    val newsHeadLines: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
 
     //View all articles
     fun getAllArticles(country: String, page: Int) = viewModelScope.launch(IO) {
@@ -46,9 +47,9 @@ class NewsViewModel(
     }
 
     //Technology related articles from a given source
-    private val techArticlesFromSource: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+    val techArticlesFromSource: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
 
-    fun getTechArticlesFromSource(category: String, source: String, page: Int) = viewModelScope.launch{
+    fun getTechArticlesFromSource(category: String, source: String, page: Int) = viewModelScope.launch {
         techArticlesFromSource.postValue(Resource.Loading())
         try {
             if (isNetworkAvailable(app)) {
@@ -64,23 +65,24 @@ class NewsViewModel(
 
 
     //View all sources with a technology category
-    private val sourcesWithTech: MutableLiveData<Resource<SourcesApiResponse>> = MutableLiveData()
-    fun getSourcesWithTech(category: String, source: String, page: Int)= viewModelScope.launch{
+    val sourcesWithTech: MutableLiveData<Resource<SourcesApiResponse>> = MutableLiveData()
+    fun getSourcesWithTech(category: String, source: String, page: Int) = viewModelScope.launch {
         sourcesWithTech.postValue(Resource.Loading())
         try {
-            if (isNetworkAvailable(app)){
+            if (isNetworkAvailable(app)) {
                 val response = getTechSourcesUseCase.execute(category, source, page)
                 sourcesWithTech.postValue(response)
-            }else{
+            } else {
                 sourcesWithTech.postValue(Resource.Error("No internet"))
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             sourcesWithTech.postValue(Resource.Error(e.message.toString()))
         }
     }
 
     //Search news implementation
-    private val searchedNews: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+    val searchedNews: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+
     fun searchNews(
             country: String,
             searchQuery: String,
