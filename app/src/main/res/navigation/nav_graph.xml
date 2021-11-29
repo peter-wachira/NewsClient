@@ -19,6 +19,13 @@
         <action
             android:id="@+id/action_newsFragment_to_savedFragment"
             app:destination="@id/savedFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_techSourcesFragment"
+            app:destination="@id/techSourcesFragment" />
+        <argument
+            android:name="selected_source"
+            app:argType="com.droid.newsclient.data.model.sources.Source"
+            />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
@@ -35,6 +42,12 @@
         android:name="com.droid.newsclient.presentation.ui.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info">
+        <argument
+            android:name="selected_article"
+            app:argType="com.droid.newsclient.data.model.articles.Article"
+            />
+
+
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -44,5 +57,14 @@
         <action
             android:id="@+id/action_searchFragment_to_infoFragment"
             app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/techSourcesFragment"
+        android:name="com.droid.newsclient.presentation.ui.TechSourcesFragment"
+        android:label="fragment_tech_sources"
+        tools:layout="@layout/fragment_tech_sources" >
+        <action
+            android:id="@+id/action_techSourcesFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
     </fragment>
 </navigation>

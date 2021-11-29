@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:strokeColor="@android:color/black"
+        app:strokeColor="@color/gray"
         app:strokeWidth="2px">
 
 
@@ -65,7 +65,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/materialTextView2"
-                style="@style/TextAppearance.MaterialComponents.Subtitle2"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -73,7 +73,7 @@
                 android:maxLines="1"
                 android:padding="4dp"
                 android:gravity="center_horizontal"
-                tools:text="See all Tech Sources"
+                android:text="See all Tech Sources"
                 android:textColor="@color/colorTextBlackSecondary"
                 android:fontFamily="@font/roboto_bold"
                 app:layout_constraintBottom_toBottomOf="parent"

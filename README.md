@@ -8,6 +8,10 @@
 This is my simple app demonstration the use of clean architecture. It gets data from the [News API](https://newsapi.org/) and entertains the user using
 clean architecture and MVVM.
 
+
+![](screenshots/img.png)
+
+
 ## Prerequisite
 
 minSdkVersion -> 26

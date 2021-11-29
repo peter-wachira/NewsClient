@@ -47,7 +47,6 @@ fun View.showSnackbar(message: String, length: Int) {
 }
 
 
-
 fun View.showErrorSnackbar(message: String, length: Int) {
     val snackbar = Snackbar.make(this, message, length)
 
@@ -63,7 +62,7 @@ fun View.showSuccessSnackbar(message: String, length: Int) {
 
     snackbar.apply {
         this.setBackgroundTint(
-            ContextCompat.getColor(view.context, R.color.colorPrimary)
+                ContextCompat.getColor(view.context, R.color.colorPrimary)
         )
         this.setTextColor(ContextCompat.getColor(this.context, android.R.color.white))
         show()
@@ -98,8 +97,8 @@ fun View.showRetrySnackBar(message: String, action: ((View) -> Unit)?) {
 }
 
 internal inline fun <reified T> Activity.navigateTo(
-    clearTask: Boolean = false,
-    noinline intentExtras: ((Intent) -> Unit)? = null
+        clearTask: Boolean = false,
+        noinline intentExtras: ((Intent) -> Unit)? = null
 ) {
 
     val intent = Intent(this, T::class.java)
